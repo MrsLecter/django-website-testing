@@ -1,8 +1,7 @@
-from audioop import reverse
 from django.test import TestCase, Client
+from django.urls import reverse
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
-import json
+
 
 class TestViews(TestCase):
 
