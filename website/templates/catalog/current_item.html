@@ -1,0 +1,15 @@
+{%extends 'main.html'%} 
+{% load static %}
+{% block content%}
+<img class='product_item rounded img-fluid' src={{item.picture_link}}>
+<br>
+<hr>
+<p><i>Description: </i>{{item.description}}</p>
+<p><i>Category: </i>{{item.category}}</p>
+<p><i>Price: </i>{{item.price}}</p>
+<p><i>Presence: </i>{{item.presence}}</p>
+<form action="/item/{{data}}/add" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Add"/>
+</form>
+{% endblock %}

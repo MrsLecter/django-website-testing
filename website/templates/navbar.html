@@ -1,0 +1,32 @@
+
+  <h2><a href="/">WEBSITE</a></h2>
+  <hr />
+  <ul class="nav justify-content-end">
+    {% if request.user.is_authenticated %} {% comment %}
+    <li class="nav-item"><a class="nav-link" href="/basket/">Basket</a></li>
+    {% endcomment %} {% comment %}
+    <li class="nav-item">
+      <a class="nav-link" href="/complete_purchase/">Complete_purchase</a>
+    </li>
+    {% endcomment %}
+    <li class="nav-item"><a class="nav-link" href="/admin/">Admin_panel</a></li>
+    {%endif%}
+    <li class="nav-item"><a class="nav-link" href="/search/">Search</a></li>
+    <li class="nav-item"><a class="nav-link" href="/category/">Category</a></li>
+    <li class="nav-item"><a class="nav-link" href="/contacts/">Contacts</a></li>
+
+    {% if request.user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="">Hello, {{request.user.username}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/logout/">LogOut</a>
+    </li>
+    {%else%}
+    <li class="nav-item"><a class="nav-link" href="">Hello, guest !</a></li>
+    <li class="nav-item"><a class="nav-link" href="/users/login/">LogIn</a></li>
+    {%endif%} {% load static%}
+    <li class="nav-item"><a class="nav-link" href="/basket">Basket <span id="basket_counter">0</span></a
+      >
+    </li>
+  </ul>

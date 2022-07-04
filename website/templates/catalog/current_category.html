@@ -1,0 +1,23 @@
+{%extends 'main.html'%}
+{% load static %}
+
+{% block content%}
+<div class='row'>
+    {% comment %} bug {% endcomment %}
+    {%for id in ids%}
+    {%for item in items%}
+    <div class='col-lg-4'>
+        {% comment %} <img class='product_item' src={% static 'images/product.png'%}> {% endcomment %}
+        <img class='product_item rounded img-fluid' src={{item.picture_link}}>
+        <div class='box-item'>
+            <p>{{item.goods_name}}</p>
+            <a class="btn btn-outline-success" href = '/item/{{id}}'>View</a>
+            <button data-product="1" data-action="add" type="button" class="btn btn-outline-primary add-basket" >Add to basket</button>
+            <h4 style="display: inline-block; float: right">${{item.price}}</h4>
+        </div>
+    </div>
+    {%endfor%}
+    {%endfor%}
+</div>
+
+{% endblock %}

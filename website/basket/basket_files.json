@@ -1,0 +1,12 @@
+[
+    {
+        "item_id": 1,
+        "category": "1",
+        "price": 123
+    },
+    {
+        "item_id": 2,
+        "category": "2",
+        "price": 222
+    }
+]

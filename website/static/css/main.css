@@ -1,0 +1,23 @@
+.nav-item a img{
+    width: 25px;
+    height: 25px;
+}
+
+.box-item{
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.basket-row{
+    display:inline-block;
+    margin-bottom: 10px;
+}
+
+.basket-row div{
+    display: block;
+}
+
+.product_item img{
+    width: 100px;
+    height: 100px;
+}

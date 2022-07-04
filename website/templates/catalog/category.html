@@ -1,0 +1,12 @@
+{%extends 'main.html'%}
+{% load static %}
+
+{% block content%}
+
+<div class="d-grid gap-2 col-6 mx-auto">
+    {%for item in data%}
+        <a class="btn btn-primary" type="button" href="/category/{{item}}">{{item}}</a>
+    {%endfor%}
+</div>
+
+{% endblock %}

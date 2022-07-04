@@ -1,0 +1,55 @@
+{%extends 'main.html'%} 
+
+{% block content%}
+<form method="GET" action="/search">
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Search</span>
+    <input name="keyword" type="text" class="form-control" placeholder="searchphrase" aria-label="Username" aria-describedby="addon-wrapping">
+  </div>
+  <br>
+    {%for item in category%}
+    <div class="form-check form-switch">
+      <input name="category" value="{{item}}" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+      <label  class="form-check-label" for="flexSwitchCheckDefault">{{item}}</label>
+    </div>
+    {% endfor %}
+
+    <br>
+
+    <div class="input-group">
+      <span class="input-group-text">Price range</span>
+      <input name="price_from" type="number" aria-label="price_from" class="form-control">
+      <input name="price_to" type="number" aria-label="price_to" class="form-control">
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+{% if ifFind %}
+<p>Search result</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">goods_name</th>
+      <th scope="col">category</th>
+      <th scope="col">price</th>
+      <th scope="col">description</th>
+      <th scope="col">presence</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for item in goods%}
+    <tr>
+      <th scope="row">*</th>
+      <td>{{item.goods_name}}</td>
+      <th>{{item.category}}</th>
+      <td>{{item.price}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.presence}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endif%}
+{% endblock %}
